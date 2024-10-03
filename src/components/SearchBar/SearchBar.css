@@ -1,14 +1,12 @@
-/* Styling for the search bar */
 .search-container {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: -12px;
-  position: relative; /* To manage positioning better if needed */
 }
 
 .search-input {
-  width: 200px; /* Default width */
+  width: 200px;
   padding: 8px 12px;
   border: 1px solid #ccc;
   border-radius: 50px;
@@ -23,7 +21,7 @@
 }
 
 .search-input:focus {
-  width: 300px; /* Expands when focused */
+  width: 300px; 
 }
 
 .search-btn {
@@ -45,62 +43,36 @@
   opacity: 0.8; 
 }
 
-/* Dark mode background styling */
 body {
   background-color: #141414;
   font-family: Arial, sans-serif;
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .search-container {
-    margin-right: -10px; /* Adjust margin for medium screens */
+    flex-direction: column; 
+    align-items: stretch; 
+    margin-right: 0;
   }
 
   .search-input {
-    width: 150px; /* Smaller width on medium screens */
-  }
-
-  .search-input:focus {
-    width: 250px; /* Adjust expanded width */
-  }
-}
-
-@media (max-width: 800px) {
-  .search-container {
-    margin-right: -8px; /* Further adjustment for smaller screens */
-  }
-
-  .search-input {
-    width: 120px; /* Further reduced width */
-  }
-
-  .search-input:focus {
-    width: 220px; /* Adjust focus width */
+    width: 100%; 
+    margin-bottom: 10px;
   }
 
   .search-btn {
-    margin-left: -30px; /* Adjust button position */
+    width: 100%; 
+    margin-left: 0; 
+    justify-content: center; 
   }
 }
 
-/* Specific adjustments for iPhone SE (320px width) */
-@media (max-width: 320px) {
-  .search-container {
-    justify-content: flex-end; /* Align items to the right */
-    width: 100%; /* Full width for the container */
-    padding: 0 10px; /* Add some padding for better spacing */
-  }
-
+@media (min-width: 769px) {
   .search-input {
-    width: 90%; /* Use most of the width */
-    margin-bottom: 10px; /* Space between input and button */
-    padding: 6px 10px; /* Adjust padding for smaller size */
+    width: 200px; 
   }
 
   .search-btn {
-    margin-left: 0; /* Reset margin for button */
-    width: auto; /* Keep button size auto */
-    padding: 10px; /* Add padding for better touch targets */
+    margin-left: -40px; 
   }
 }

@@ -5,8 +5,8 @@ const SearchBar = () => {
   return (
     <div className="search-container">
       <input type="text" className="search-input" placeholder="Search for titles..." />
-      <button className="search-btn">
-        <i className="fa fa-search"></i>  {/* Font Awesome for search icon */}
+      <button className="search-btn" type="button">
+        <i></i> {/* Ensure you have Font Awesome imported */}
       </button>
     </div>
   );

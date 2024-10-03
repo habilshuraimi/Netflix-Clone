@@ -30,6 +30,24 @@ const Navbar = () => {
     setSearchVisible((prev) => !prev);
   };
 
+  // Close search when clicking outside of the SearchBar
+  const handleClickOutside = (event) => {
+    if (searchVisible && navRef.current && !navRef.current.contains(event.target)) {
+      setSearchVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    if (searchVisible) {
+      window.addEventListener('click', handleClickOutside);
+    } else {
+      window.removeEventListener('click', handleClickOutside);
+    }
+    return () => {
+      window.removeEventListener('click', handleClickOutside);
+    };
+  }, [searchVisible]);
+
   return (
     <div ref={navRef} className='navbar'>
       <div className="navbar-left">
@@ -49,10 +67,11 @@ const Navbar = () => {
           src={search}
           alt="Search"
           className='icons'
+          id='searchIcon'
           onClick={toggleSearch}
         />
         <p>Children</p>
-        <img src={bell} alt="Notifications" className='icons' />
+        <img src={bell} alt="Notifications" className='icons '  />
         <div className="navbar-profile">
           <img src={profile} alt="Profile" className='profile' />
           <img src={caret} alt="Caret" />

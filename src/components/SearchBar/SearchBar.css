@@ -1,0 +1,45 @@
+/* Styling for the search bar */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .search-input {
+    width: 200px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    transition: width 0.3s ease;
+    outline: none;
+    background-color: #141414; /* Dark Netflix-like background */
+    color: white;
+  }
+  
+  .search-input::placeholder {
+    color: #777;
+  }
+  
+  .search-input:focus {
+    width: 300px; /* Expands when focused */
+  }
+  
+  .search-btn {
+    background: none;
+    border: none;
+    margin-left: -40px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .search-btn .fa-search {
+    font-size: 16px;
+  }
+  
+  /* Dark mode background styling */
+  body {
+    background-color: #141414;
+    font-family: Arial, sans-serif;
+  }
+  
